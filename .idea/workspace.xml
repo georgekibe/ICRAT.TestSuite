@@ -4,26 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4e6aef-5e97-4e7f-9992-5799b9632238" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="0e4e6aef-5e97-4e7f-9992-5799b9632238" name="Changes" comment="Project Structure">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/landingpage/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/generalsetups/CountriesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/generalsetups/CurrenciesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/generalsetups/IssuersPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/generalsetups/SectorsFactorsRatiosPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/generalsetups/TenorsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/CountriesTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/CurrenciesTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/FactorsTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/IssuersTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/RatiosTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/SectorsTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/TenorsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2txEZMfM6rs2QFic9NMq2CcLOag" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,10 +54,56 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.BaseTest.executor": "Run",
+    "TestNG.BaseTest.testSuccessLogin.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="TestNG.BaseTest.testSuccessLogin">
+    <configuration name="BaseTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="ICRAT.TestSuite" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BaseTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseTest.testSuccessLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="ICRAT.TestSuite" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BaseTest" />
+      <option name="METHOD_NAME" value="testSuccessLogin" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.BaseTest.testSuccessLogin" />
+        <item itemvalue="TestNG.BaseTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,6 +113,19 @@
       <option name="presentableId" value="Default" />
       <updated>1741285381777</updated>
     </task>
+    <task id="LOCAL-00001" summary="Project Structure">
+      <option name="closed" value="true" />
+      <created>1741289942955</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741289942955</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Project Structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project Structure" />
   </component>
 </project>
