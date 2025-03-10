@@ -5,11 +5,15 @@ import org.openqa.selenium.WebDriver;
 
 public class CountriesPage {
 
-    WebDriver driver;
+    public WebDriver driver;
 
     public CountriesPage(WebDriver webDriver) {
         this.driver = webDriver;
     }
+
+//    if (driver == null){
+//
+//    }
 
     private final By generalSetup = By.xpath("//div[normalize-space()='General Setup']");
     private final By countriesSetup = By.xpath("//div[contains(text(),'Countries')]");
@@ -20,12 +24,16 @@ public class CountriesPage {
     private final By currencyAlphaTwoCode = By.xpath("//*[contains(@id, '_AlphaTwoCode')]");
     private final By currencyAlphaThreeCode = By.xpath("//*[contains(@id, '_AlphaThreeCode')]");
     private final By currencyNumericCode = By.xpath("//*[contains(@id, '_NumericCode')]");
+    private final By saveButton = By.xpath("//span[normalize-space()='save']");
 
-    private final By closeFormButton = By.xpath("//mat-icon[normalize-space()='close']");
 
+    // Pending Approvals - get elements
+    private final By pendingApproval = By.xpath("//span[normalize-space()='Pending Approval']");
+    private final By selectAllRows = By.cssSelector("//div[@class='dx-widget dx-checkbox dx-select-checkbox dx-datagrid-checkbox-size dx-state-focused dx-state-hover']//span[@class='dx-checkbox-icon']");
 
     public void createCountry() {
 
+        // create country entry
         driver.findElement(generalSetup).click();
         driver.findElement(countriesSetup).click();
         driver.findElement(addCurrency).click();
@@ -33,11 +41,14 @@ public class CountriesPage {
         driver.findElement(currencyAlphaTwoCode).sendKeys("CT");
         driver.findElement(currencyAlphaThreeCode).sendKeys("CTE");
         driver.findElement(currencyNumericCode).sendKeys("111");
+        driver.findElement(saveButton).click();
 
-        // to adding save button here
+    }
 
-        driver.findElement(closeFormButton).click();
-
+    public void approvePendingCountry() {
+        // approve the approved entry
+        driver.findElement(pendingApproval).click();
+        driver.findElement(selectAllRows).click();
 
     }
 }
