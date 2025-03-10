@@ -8,6 +8,11 @@
                     <include name="testSuccessLogin"/>
                 </methods>
             </class>
+            <class name="tests.generalsetups.CountriesTests">
+                <methods>
+                    <include name="createCountryTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
