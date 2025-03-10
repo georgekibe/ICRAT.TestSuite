@@ -18,7 +18,6 @@ public class BaseTest {
 
     public WebDriver webDriver;
     LoginPage loginPage;
-    CountriesPage countriesPage;
 
     private static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
@@ -34,7 +33,6 @@ public class BaseTest {
 
         // initialize all the pages that need to use the webdriver
         loginPage = new LoginPage(webDriver);
-        countriesPage = new CountriesPage(webDriver);
 
 
         webDriver.get("http://localhost:4200/");
@@ -58,11 +56,7 @@ public class BaseTest {
 
     @Test
     public void testSuccessLogin() throws InterruptedException {
-        if (countriesPage == null) {
-            countriesPage = new CountriesPage(webDriver);
-            System.out.println("Here");
-        }
-        System.out.println("Here 2");
+       // for quick test running
     }
 
 

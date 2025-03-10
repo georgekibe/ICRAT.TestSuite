@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4e6aef-5e97-4e7f-9992-5799b9632238" name="Changes" comment="Added the general view for the project by including logging progress on base class &#10;created test for adding a country">
+    <list default="true" id="0e4e6aef-5e97-4e7f-9992-5799b9632238" name="Changes" comment="java.lang.NullPointerException: Cannot invoke &quot;pages.generalsetups.CountriesPage.createCountry()&quot; because &quot;this.countriesPage&quot; is null&#10;&#10;Fixed this issue and also access to the web elements with varying part of the ID">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/generalsetups/CountriesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/generalsetups/CountriesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/generalsetups/CountriesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/CountriesTests.java" afterDir="false" />
     </list>
@@ -183,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741581272133</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="java.lang.NullPointerException: Cannot invoke &quot;pages.generalsetups.CountriesPage.createCountry()&quot; because &quot;this.countriesPage&quot; is null&#10;&#10;Fixed this issue and also access to the web elements with varying part of the ID">
+      <option name="closed" value="true" />
+      <created>1741584256000</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741584256000</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -192,6 +199,7 @@
     <MESSAGE value="Project Structure created &amp; Login test added to the base class to run on each test run" />
     <MESSAGE value="Added TestNG to run on maven plugin and created the testsuite to be adding tests" />
     <MESSAGE value="Added the general view for the project by including logging progress on base class &#10;created test for adding a country" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the general view for the project by including logging progress on base class &#10;created test for adding a country" />
+    <MESSAGE value="java.lang.NullPointerException: Cannot invoke &quot;pages.generalsetups.CountriesPage.createCountry()&quot; because &quot;this.countriesPage&quot; is null&#10;&#10;Fixed this issue and also access to the web elements with varying part of the ID" />
+    <option name="LAST_COMMIT_MESSAGE" value="java.lang.NullPointerException: Cannot invoke &quot;pages.generalsetups.CountriesPage.createCountry()&quot; because &quot;this.countriesPage&quot; is null&#10;&#10;Fixed this issue and also access to the web elements with varying part of the ID" />
   </component>
 </project>

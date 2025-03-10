@@ -1,6 +1,5 @@
 package tests.generalsetups;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.generalsetups.CountriesPage;
@@ -13,15 +12,13 @@ public class CountriesTests extends BaseTest {
 
     @BeforeMethod
     public void initializePage() {
-        if (countriesPage == null) {
-            countriesPage = new CountriesPage(webDriver);
-            System.out.println("Here 3");
-        }
-        System.out.println("Here 4");
+
+        countriesPage = new CountriesPage(webDriver);
+
     }
 
     @Test
-    public void createCountryTest(){
+    public void createCountryTest() {
         countriesPage.createCountry();
     }
 
