@@ -58,7 +58,11 @@ public class BaseTest {
 
     @Test
     public void testSuccessLogin() throws InterruptedException {
-        Thread.sleep(50000);
+        if (countriesPage == null) {
+            countriesPage = new CountriesPage(webDriver);
+            System.out.println("Here");
+        }
+        System.out.println("Here 2");
     }
 
 
