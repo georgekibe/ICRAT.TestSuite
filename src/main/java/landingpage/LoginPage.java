@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class LoginPage {
 
-    private WebDriverWait wait;
+    private final WebDriverWait wait;
     WebDriver webDriver;
 
     public LoginPage(WebDriver webDriver) {
@@ -19,9 +19,9 @@ public class LoginPage {
     }
 
     // Locators
-    private By username = By.id("username");
-    private By password = By.id("password");
-    private By loginButton = By.xpath("//button[@type='submit']");
+    private final By username = By.id("username");
+    private final By password = By.id("password");
+    private final By loginButton = By.xpath("//button[@type='submit']");
 
 
     // Actions

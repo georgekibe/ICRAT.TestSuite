@@ -33,8 +33,17 @@ public class CountriesTests extends BaseTest {
         countriesPage.approvePendingCountry();
         logger.info("Created country has been successfully approved!");
 
+        logger.info("Viewing the created country.............");
         countriesPage.viewCreatedCountry();
         logger.info("Created country exists in the database!");
+
+        logger.info("Updating the country's numeric code........");
+        countriesPage.updateCountry();
+        logger.info("Updated the country's numeric code successfully!");
+
+        logger.info("Deleting operation process for the country initiated......");
+        countriesPage.deleteCountry();
+        logger.info("Country successfully deleted !!!");
 
     }
 

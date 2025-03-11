@@ -76,9 +76,9 @@ public class BaseTest {
     private void setupBrowserTimeouts() {
         logger.info("Setting Browser Timeouts....");
 
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+//        webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
 
         logger.info("Browser Timeouts successfully set!");
 

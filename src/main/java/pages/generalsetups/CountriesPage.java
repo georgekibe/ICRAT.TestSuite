@@ -4,6 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+
+ /*
+ *
+ * Pending dealing with waits and elements that have not been loaded - for windows it should be wait for the first element
+ * */
 
 public class CountriesPage {
 
@@ -28,18 +34,33 @@ public class CountriesPage {
     private final By selectAllRows = By.xpath("//td[normalize-space()='Country Test']");
     private final By editCountryApprove = By.xpath("//span[normalize-space()='Approve']");
 
-    // Check approved country and deleting it
-    private final By activeCountries = By.xpath("//span[normalize-space()='Countries']");
+    // Check approved country and viewing it
+    private final By activeCountries = By.xpath("//span[normalize-space()='Active']");
     private final By searchButton = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-countries[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-data-grid[1]/div[1]/dx-data-grid[1]/div[1]/div[4]/div[1]/div[1]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]");
-    private final By selectdoubleClickCountry = By.xpath("//td[@class='dx-cell-focus-disabled']");
+    private final By selectdoubleClickCountry = By.xpath("//td[normalize-space()='CT']");
 
-    Actions actions = new Actions(driver);
+
+    //update and delete
+
+    private final By updateCountry = By.xpath("//span[normalize-space()='update']");
+    private final By refreshButton = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-countries[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/dx-button[1]/div[1]/span[1]");
+    private final By deleteCountry = By.xpath("//span[normalize-space()='delete']");
+    private final By confirmDeletion = By.xpath("//div[@aria-label='Yes']//div[@class='dx-button-content']");
+
     public void createCountry() {
+
 
         // create country entry
         driver.findElement(generalSetup).click();
         driver.findElement(countriesSetup).click();
         driver.findElement(addCurrency).click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         driver.findElement(currencyName).sendKeys("Country Test");
         driver.findElement(currencyAlphaTwoCode).sendKeys("CT");
         driver.findElement(currencyAlphaThreeCode).sendKeys("CTE");
@@ -51,8 +72,15 @@ public class CountriesPage {
     public void approvePendingCountry() {
         // approve the approved entry
         driver.findElement(pendingApproval).click();
+        driver.findElement(refreshButton).click();
 
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
+        Actions actions = new Actions(driver);
         WebElement element = driver.findElement(selectAllRows);
         actions.doubleClick(element).perform();
 
@@ -62,22 +90,80 @@ public class CountriesPage {
 
     public void viewCreatedCountry() {
         driver.findElement(activeCountries).click();
-        driver.findElement(searchButton).sendKeys("test");
+
+
+        WebElement searchElement = driver.findElement(searchButton);
+        searchElement.sendKeys("test");
 
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-//        Actions actions1 = Actions(driver);
+
         WebElement activeElement = driver.findElement(selectdoubleClickCountry);
-        actions.doubleClick(activeElement).perform();
+        Actions actions1 = new Actions(driver);
+        actions1.doubleClick(activeElement).perform();
 
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
 
     }
+
+    public void updateCountry() {
+
+        driver.findElement(currencyNumericCode).clear();
+        driver.findElement(currencyNumericCode).sendKeys("555");
+        driver.findElement(updateCountry).click();
+
+        approvePendingCountry();
+        driver.findElement(activeCountries).click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        WebElement activeElement = driver.findElement(selectdoubleClickCountry);
+        Actions actions2 = new Actions(driver);
+        actions2.doubleClick(activeElement).perform();
+
+        String expectedNumericCode = "555";
+
+
+        String actualValue = driver.findElement(currencyNumericCode).getAttribute("value");
+        Assert.assertEquals(actualValue, expectedNumericCode);
+
+    }
+
+    public void deleteCountry(){
+
+        WebElement activeElement = driver.findElement(selectdoubleClickCountry);
+        Actions actions3 = new Actions(driver);
+        actions3.doubleClick(activeElement).perform();
+
+        driver.findElement(deleteCountry).click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        driver.findElement(confirmDeletion).click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
