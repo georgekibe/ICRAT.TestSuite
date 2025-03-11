@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4e6aef-5e97-4e7f-9992-5799b9632238" name="Changes" comment="Working on CRUD for country master data.">
+    <list default="true" id="0e4e6aef-5e97-4e7f-9992-5799b9632238" name="Changes" comment="CRUD for Countries Masterdata completed E2E">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/landingpage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/landingpage/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/generalsetups/CountriesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/generalsetups/CountriesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/generalsetups/CountriesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/generalsetups/CountriesTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,7 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.CountriesTests.createCountryTest">
+  <component name="RunManager" selected="TestNG.E:/Stuff/Study/Automation Testing/ICRAT TestSuite/ICRAT.TestSuite/testng.xml">
     <configuration name="BaseTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="ICRAT.TestSuite" />
       <extension name="coverage">
@@ -106,7 +106,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountriesTests.approvePendingCountry" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CountriesTests.setupCountryTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="ICRAT.TestSuite" />
       <extension name="coverage">
         <pattern>
@@ -116,7 +116,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests.generalsetups" />
       <option name="MAIN_CLASS_NAME" value="tests.generalsetups.CountriesTests" />
-      <option name="METHOD_NAME" value="approvePendingCountry" />
+      <option name="METHOD_NAME" value="setupCountryTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -124,18 +124,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountriesTests.createCountryTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="E:/Stuff/Study/Automation Testing/ICRAT TestSuite/ICRAT.TestSuite/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="ICRAT.TestSuite" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.generalsetups.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests.generalsetups" />
-      <option name="MAIN_CLASS_NAME" value="tests.generalsetups.CountriesTests" />
-      <option name="METHOD_NAME" value="createCountryTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -144,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CountriesTests.createCountryTest" />
+        <item itemvalue="TestNG.E:/Stuff/Study/Automation Testing/ICRAT TestSuite/ICRAT.TestSuite/testng.xml" />
+        <item itemvalue="TestNG.CountriesTests.setupCountryTest" />
         <item itemvalue="TestNG.BaseTest.testSuccessLogin" />
         <item itemvalue="TestNG.BaseTest" />
         <item itemvalue="TestNG.CountriesTests" />
-        <item itemvalue="TestNG.CountriesTests.approvePendingCountry" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741712867349</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="CRUD for Countries Masterdata completed E2E">
+      <option name="closed" value="true" />
+      <created>1741728686167</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741728686167</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -247,6 +247,7 @@
     <MESSAGE value="Adding the test on TestNG but it is failing although passes when run separately" />
     <MESSAGE value="creating country is working okay&#10;&#10;started on approving the created country" />
     <MESSAGE value="Working on CRUD for country master data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on CRUD for country master data." />
+    <MESSAGE value="CRUD for Countries Masterdata completed E2E" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD for Countries Masterdata completed E2E" />
   </component>
 </project>

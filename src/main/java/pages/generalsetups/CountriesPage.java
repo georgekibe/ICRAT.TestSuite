@@ -21,11 +21,11 @@ public class CountriesPage {
 
     private final By generalSetup = By.xpath("//div[normalize-space()='General Setup']");
     private final By countriesSetup = By.xpath("//div[contains(text(),'Countries')]");
-    private final By addCurrency = By.cssSelector("dx-button[aria-label='Add Country'] span[class='dx-button-text']");
-    private final By currencyName = By.xpath("//*[contains(@id, '_Name')]");
-    private final By currencyAlphaTwoCode = By.xpath("//*[contains(@id, '_AlphaTwoCode')]");
-    private final By currencyAlphaThreeCode = By.xpath("//*[contains(@id, '_AlphaThreeCode')]");
-    private final By currencyNumericCode = By.xpath("//*[contains(@id, '_NumericCode')]");
+    private final By addCountry = By.cssSelector("dx-button[aria-label='Add Country'] span[class='dx-button-text']");
+    private final By countryName = By.xpath("//*[contains(@id, '_Name')]");
+    private final By countryAlphaTwoCode = By.xpath("//*[contains(@id, '_AlphaTwoCode')]");
+    private final By countryAlphaThreeCode = By.xpath("//*[contains(@id, '_AlphaThreeCode')]");
+    private final By countryNumericCode = By.xpath("//*[contains(@id, '_NumericCode')]");
     private final By saveButton = By.xpath("//span[normalize-space()='save']");
 
 
@@ -53,7 +53,7 @@ public class CountriesPage {
         // create country entry
         driver.findElement(generalSetup).click();
         driver.findElement(countriesSetup).click();
-        driver.findElement(addCurrency).click();
+        driver.findElement(addCountry).click();
 
         try {
             Thread.sleep(3000);
@@ -61,10 +61,10 @@ public class CountriesPage {
             throw new RuntimeException(e);
         }
 
-        driver.findElement(currencyName).sendKeys("Country Test");
-        driver.findElement(currencyAlphaTwoCode).sendKeys("CT");
-        driver.findElement(currencyAlphaThreeCode).sendKeys("CTE");
-        driver.findElement(currencyNumericCode).sendKeys("111");
+        driver.findElement(countryName).sendKeys("Country Test");
+        driver.findElement(countryAlphaTwoCode).sendKeys("CT");
+        driver.findElement(countryAlphaThreeCode).sendKeys("CTE");
+        driver.findElement(countryNumericCode).sendKeys("111");
         driver.findElement(saveButton).click();
 
     }
@@ -116,8 +116,8 @@ public class CountriesPage {
 
     public void updateCountry() {
 
-        driver.findElement(currencyNumericCode).clear();
-        driver.findElement(currencyNumericCode).sendKeys("555");
+        driver.findElement(countryNumericCode).clear();
+        driver.findElement(countryNumericCode).sendKeys("555");
         driver.findElement(updateCountry).click();
 
         approvePendingCountry();
@@ -137,7 +137,7 @@ public class CountriesPage {
         String expectedNumericCode = "555";
 
 
-        String actualValue = driver.findElement(currencyNumericCode).getAttribute("value");
+        String actualValue = driver.findElement(countryNumericCode).getAttribute("value");
         Assert.assertEquals(actualValue, expectedNumericCode);
 
     }

@@ -3,14 +3,14 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="E:/Stuff/Study/Automation Testing/ICRAT TestSuite/ICRAT.TestSuite">
         <classes>
-            <class name="tests.BaseTest">
-                <methods>
-                    <include name="testSuccessLogin"/>
-                </methods>
-            </class>
+<!--            <class name="tests.BaseTest">-->
+<!--                <methods>-->
+<!--                    <include name="testSuccessLogin"/>-->
+<!--                </methods>-->
+<!--            </class>-->
             <class name="tests.generalsetups.CountriesTests">
                 <methods>
-                    <include name="createCountryTest"/>
+                    <include name="setupCountryTest"/>
                 </methods>
             </class>
         </classes>

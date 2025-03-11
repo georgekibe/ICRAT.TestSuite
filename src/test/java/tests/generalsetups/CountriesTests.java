@@ -22,7 +22,7 @@ public class CountriesTests extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void createCountryTest() {
+    public void setupCountryTest() {
 
         countriesPage = new CountriesPage(webDriver);
 
