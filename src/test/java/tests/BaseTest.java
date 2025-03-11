@@ -32,6 +32,8 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
 
+        logger.info("Drive successfully created!");
+
         // initialize all the pages that need to use the webdriver
         loginPage = new LoginPage(webDriver);
         countriesPage = new CountriesPage(webDriver);
@@ -41,7 +43,7 @@ public class BaseTest {
         webDriver.manage().window().maximize();
 
         setupBrowserTimeouts();
-        logger.info("Drive successfully created!");
+
 
         // Login process for each tests
         logger.info("Login process initiated....");

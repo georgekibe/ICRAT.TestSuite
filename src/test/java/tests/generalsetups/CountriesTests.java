@@ -23,11 +23,7 @@ public class CountriesTests extends BaseTest {
 
     @Test(priority = 1)
     public void createCountryTest() {
-        if (countriesPage == null) {
-//            System.out.println("Test 1");
-            countriesPage = new CountriesPage(webDriver);
-        }
-//        System.out.println("Test 2");
+
         countriesPage = new CountriesPage(webDriver);
 
         countriesPage.createCountry();
@@ -35,14 +31,13 @@ public class CountriesTests extends BaseTest {
         logger.info("Country successfully created!!!");
 
         countriesPage.approvePendingCountry();
+        logger.info("Created country has been successfully approved!");
+
+        countriesPage.viewCreatedCountry();
+        logger.info("Created country exists in the database!");
 
     }
 
-//    @Test(priority = 2)
-//    public void approvePendingCountry() {
-//
-//        approvePendingCountry();
-//    }
 
 
 }
