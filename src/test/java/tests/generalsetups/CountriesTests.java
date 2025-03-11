@@ -26,10 +26,11 @@ public class CountriesTests extends BaseTest {
 
         countriesPage = new CountriesPage(webDriver);
 
+        logger.info("Creating the country started.............");
         countriesPage.createCountry();
-
         logger.info("Country successfully created!!!");
 
+        logger.info("Created country approval process started.........");
         countriesPage.approvePendingCountry();
         logger.info("Created country has been successfully approved!");
 
