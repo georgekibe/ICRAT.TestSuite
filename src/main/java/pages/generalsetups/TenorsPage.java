@@ -45,7 +45,7 @@ public class TenorsPage {
         webDriver.findElement(tenorsSetUp).click();
         webDriver.findElement(addTenor).click();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(300);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -106,7 +106,7 @@ public class TenorsPage {
         }
         webDriver.findElement(confirmTenorDeletion).click();
         try {
-            Thread.sleep(30000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
