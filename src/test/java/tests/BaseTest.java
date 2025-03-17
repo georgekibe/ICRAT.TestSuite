@@ -58,7 +58,7 @@ public class BaseTest {
 
     }
 
-    @Test
+    @Test(priority = 2)
     public void testSuccessLogin() throws InterruptedException {
        // for quick test running
     }
