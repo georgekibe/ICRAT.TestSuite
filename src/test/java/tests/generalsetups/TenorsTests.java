@@ -34,6 +34,11 @@ public class TenorsTests extends BaseTest {
         tenorsPage.updateTenor();
         logger.info("Tenor successfully updated !!!");
 
+        logger.info("Deleting the tenor initiated...........");
+        tenorsPage.deletingTenor();
+        logger.info("Tenor successfully deleted  !!!");
+
+
     }
 
 
