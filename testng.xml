@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="Regression Test Suite">
     <test verbose="2" preserve-order="true" name="E:/Stuff/Study/Automation Testing/ICRAT TestSuite/ICRAT.TestSuite">
         <classes>
-<!--            <class name="tests.BaseTest">-->
-<!--                <methods>-->
-<!--                    <include name="testSuccessLogin"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-            <class name="tests.generalsetups.CountriesTests">
-                <methods>
-                    <include name="setupCountryTest"/>
-                </methods>
-            </class>
+
+            <class name="tests.BaseTest"></class>
+            <class name="tests.generalsetups.CountriesTests"></class>
+            <class name="tests.generalsetups.TenorsTests"></class>
         </classes>
     </test>
 </suite>
