@@ -25,8 +25,6 @@ public class CountriesTests extends BaseTest {
     @Test(priority = 1)
     public void setupCountryTest() {
 
-        countriesPage = new CountriesPage(webDriver);
-
         logger.info("Creating the country started.............");
         countriesPage.createCountry();
         logger.info("Country successfully created!!!");

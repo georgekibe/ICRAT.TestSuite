@@ -19,6 +19,7 @@ public class CountriesPage {
         this.driver = webDriver;
     }
 
+    // Creating a new entity
     private final By generalSetup = By.xpath("//div[normalize-space()='General Setup']");
     private final By countriesSetup = By.xpath("//div[contains(text(),'Countries')]");
     private final By addCountry = By.cssSelector("dx-button[aria-label='Add Country'] span[class='dx-button-text']");

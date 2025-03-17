@@ -16,7 +16,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    public WebDriver webDriver;
+    protected WebDriver webDriver;
     LoginPage loginPage;
     CountriesPage countriesPage;
 
