@@ -44,6 +44,11 @@ public class TenorsPage {
         webDriver.findElement(generalSetup).click();
         webDriver.findElement(tenorsSetUp).click();
         webDriver.findElement(addTenor).click();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         webDriver.findElement(lowerBound).sendKeys("8");
         webDriver.findElement(upperBound).sendKeys("9");
         webDriver.findElement(saveButton).click();
@@ -94,6 +99,11 @@ public class TenorsPage {
     public void deletingTenor() {
 
         webDriver.findElement(deleteTenor).click();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         webDriver.findElement(confirmTenorDeletion).click();
         try {
             Thread.sleep(30000);
