@@ -100,7 +100,7 @@ public class TenorsPage {
 
         webDriver.findElement(deleteTenor).click();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(300);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
