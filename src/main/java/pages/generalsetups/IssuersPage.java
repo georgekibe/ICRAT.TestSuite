@@ -83,7 +83,7 @@ public class IssuersPage {
         webDriver.findElement(activeIssuerTab).click();
         webDriver.findElement(searchBox).sendKeys("test");
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
