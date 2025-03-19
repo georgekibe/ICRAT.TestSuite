@@ -2,6 +2,7 @@ package tests.generalsetups;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.generalsetups.CountriesPage;
@@ -14,14 +15,14 @@ public class CountriesTests extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(CountriesTests.class);
 
-    @BeforeTest
+    @BeforeMethod
     public void initializePage() {
 
         countriesPage = new CountriesPage(webDriver);
 
     }
 
-    @Test(priority = 1)
+    @Test
     public void setupCountryTest() {
 
         logger.info("Creating the country started.............");

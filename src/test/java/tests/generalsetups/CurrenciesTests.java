@@ -3,6 +3,7 @@ package tests.generalsetups;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.generalsetups.CurrenciesPage;
@@ -13,7 +14,7 @@ public class CurrenciesTests extends BaseTest {
     public CurrenciesPage currenciesPage;
     private static final Logger logger = LoggerFactory.getLogger(CurrenciesTests.class);
 
-    @BeforeTest
+    @BeforeMethod
     public void initializing() {
         currenciesPage = new CurrenciesPage(webDriver);
     }

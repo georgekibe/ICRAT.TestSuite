@@ -2,6 +2,7 @@ package tests.generalsetups;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.generalsetups.Sectors;
@@ -14,14 +15,14 @@ public class SectorsTests extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(SectorsTests.class);
 
-    @BeforeTest
+    @BeforeMethod
     public void initializeSectorPage() {
 
         sectors = new Sectors(webDriver);
 
     }
 
-    @Test(priority = 1)
+    @Test
     public void setupSectorTest() {
 
         logger.info("Creating the Sector started.............");

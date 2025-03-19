@@ -2,6 +2,7 @@ package tests.generalsetups;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.generalsetups.IssuersPage;
@@ -12,7 +13,7 @@ public class IssuersTests extends BaseTest {
     public IssuersPage issuersPage;
     private static final Logger logger = LoggerFactory.getLogger(IssuersTests.class);
 
-    @BeforeTest
+    @BeforeMethod
     public void initializeDriver() {
         issuersPage = new IssuersPage(webDriver);
 

@@ -7,9 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.generalsetups.CountriesPage;
 
 import java.time.Duration;
@@ -22,7 +20,7 @@ public class BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
-    @BeforeTest
+    @BeforeClass
     public void setUp() {
 
         //setting the driver and loading the page
@@ -58,13 +56,13 @@ public class BaseTest {
 
     }
 
-    @Test(priority = 2)
+    /*@Test(priority = 2)
     public void testSuccessLogin() throws InterruptedException {
        // for quick test running
-    }
+    }*/
 
 
-    @AfterTest
+    @AfterClass
     public void tearDown() {
 
         if (webDriver != null) {

@@ -2,6 +2,7 @@ package tests.generalsetups;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.generalsetups.TenorsPage;
@@ -14,7 +15,7 @@ public class TenorsTests extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(TenorsTests.class);
 
-    @BeforeTest
+    @BeforeMethod
     public void settingUp() {
         tenorsPage = new TenorsPage(webDriver);
     }
