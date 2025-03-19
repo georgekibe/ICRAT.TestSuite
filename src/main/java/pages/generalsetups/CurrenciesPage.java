@@ -24,8 +24,8 @@ public class CurrenciesPage {
     private final By generalSetUp = By.xpath("//div[normalize-space()='General Setup']");
     private final By currenciesSetUp = By.xpath("//div[contains(text(),'Currencies')]");
     private final By addingCurrency = By.xpath("//span[normalize-space()='Add Currency']");
-    private final By currencyName = By.xpath("//*contains(@id, '_Name')");
-    private final By currencyCode = By.xpath("//*contains(@id, 'Code')");
+    private final By currencyName = By.xpath("//*[contains(@id, '_Name')]");
+    private final By currencyCode = By.xpath("//*[contains(@id, 'Code')]");
     private final By saveButton = By.xpath("//dx-button[@aria-label='save']//div[@class='dx-button-content']");
 
 
@@ -34,7 +34,7 @@ public class CurrenciesPage {
     private final By approve = By.xpath("//span[normalize-space()='Approve']");
     private final By active = By.xpath("//span[normalize-space()='Active']");
     private final By search = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-currency[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-data-grid[1]/div[1]/dx-data-grid[1]/div[1]/div[4]/div[1]/div[1]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]");
-    private final By selectTransactionActive = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-currency[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-data-grid[1]/div[1]/dx-data-grid[1]/div[1]/div[6]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/span[1]");
+    private final By selectTransactionActive = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-currency[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-data-grid[1]/div[1]/dx-data-grid[1]/div[1]/div[6]/div[1]/table[1]/tbody[1]/tr[1]/td[2]");
     private final By update = By.xpath("//span[normalize-space()='update']");
     private final By delete = By.xpath("//span[normalize-space()='delete']");
     private final By confirmDelete = By.xpath("//span[normalize-space()='Yes']");
@@ -45,9 +45,15 @@ public class CurrenciesPage {
         webDriver.findElement(generalSetUp).click();
         webDriver.findElement(currenciesSetUp).click();
         webDriver.findElement(addingCurrency).click();
-        webDriver.findElement(currencyName).sendKeys("TEST");
-        webDriver.findElement(currencyCode).sendKeys("TES");
-        webDriver.findElement(saveButton).click();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        (wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(currencyName)))).sendKeys("New");
+        webDriver.findElement(currencyCode).sendKeys("NEW");
+        (wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(saveButton)))).click();
+
     }
 
 
@@ -55,38 +61,70 @@ public class CurrenciesPage {
         Actions actions = new Actions(webDriver);
 
         webDriver.findElement(pendingApproval).click();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(selectTransactionPending)));
         actions.doubleClick(element).perform();
         webDriver.findElement(approve).click();
 
     }
 
-    public void updateCurrency()
-    {
-        Actions actions = new Actions(webDriver);
+    public void updateCurrency() {
+        Actions actions1 = new Actions(webDriver);
 
         webDriver.findElement(active).click();
-        webDriver.findElement(search).sendKeys("TEST");
+        webDriver.findElement(search).sendKeys("New");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(selectTransactionActive)));
-        actions.doubleClick(element1).perform();
+        actions1.doubleClick(element1).perform();
         webDriver.findElement(currencyCode).clear();
-        webDriver.findElement(currencyCode).sendKeys("TEST");
+        webDriver.findElement(currencyCode).sendKeys("NEW1");
+        /*try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }*/
+        webDriver.findElement(update).click();
+        /*try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }*/
         approvePenndingCurrencies();
         webDriver.findElement(active).click();
-        webDriver.findElement(search).sendKeys("TEST");
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(selectTransactionActive)));
-        actions.doubleClick(element1).perform();
+        actions1.doubleClick(element2).perform();
 
-        String expected = "TEST";
-        String actual =webDriver.findElement(currencyCode).getAttribute("value");
+        String expected = "NEW1";
+        String actual = webDriver.findElement(currencyCode).getAttribute("value");
         Assert.assertEquals(actual, expected);
 
     }
 
-    public void deleteCurrency (){
+    public void deleteCurrency() {
         webDriver.findElement(delete).click();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         WebElement element3 = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(confirmDelete)));
         element3.click();
+
+
     }
 
 
