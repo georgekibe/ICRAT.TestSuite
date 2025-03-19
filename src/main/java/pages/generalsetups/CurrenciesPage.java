@@ -14,7 +14,7 @@ public class CurrenciesPage {
 
     public WebDriver webDriver;
     WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-    Actions actions = new Actions(webDriver);
+
 
     public CurrenciesPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -50,7 +50,10 @@ public class CurrenciesPage {
         webDriver.findElement(saveButton).click();
     }
 
+
     public void approvePenndingCurrencies() {
+        Actions actions = new Actions(webDriver);
+
         webDriver.findElement(pendingApproval).click();
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(selectTransactionPending)));
         actions.doubleClick(element).perform();
@@ -60,6 +63,8 @@ public class CurrenciesPage {
 
     public void updateCurrency()
     {
+        Actions actions = new Actions(webDriver);
+
         webDriver.findElement(active).click();
         webDriver.findElement(search).sendKeys("TEST");
         WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(webDriver.findElement(selectTransactionActive)));
