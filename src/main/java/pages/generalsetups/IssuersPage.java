@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class IssuersPage {
 
@@ -12,6 +16,7 @@ public class IssuersPage {
 
     public IssuersPage(WebDriver webDriver) {
         this.webDriver = webDriver;
+        WebDriverWait webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
     }
 
 
@@ -46,6 +51,7 @@ public class IssuersPage {
     private final By confirmDeletion = By.xpath("//div[@aria-label='Yes']//div[@class='dx-button-content']");
 
 
+
     public void createIssuer() {
         webDriver.findElement(generalSetup).click();
         webDriver.findElement(issuersSetup).click();
@@ -66,7 +72,10 @@ public class IssuersPage {
     }
 
     public void approvePendingIssuer() {
-        webDriver.findElement(pendingApproval).click();
+        WebDriverWait webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
+        WebElement element1 = webDriverWait.until(ExpectedConditions.elementToBeClickable(pendingApproval));
+        element1.click();
+//        webDriver.findElement(pendingApproval).click();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -98,9 +107,9 @@ public class IssuersPage {
 
     public void confirmIssuerUpdate() {
         webDriver.findElement(activeIssuerTab).click();
-        webDriver.findElement(searchBox).sendKeys("test");
+//        webDriver.findElement(searchBox).sendKeys("test");
         try {
-            Thread.sleep(100);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -115,12 +124,17 @@ public class IssuersPage {
 
     public void deleteTestIssuer() {
         webDriver.findElement(deleteButton).click();
-        webDriver.findElement(confirmDeletion).click();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        webDriver.findElement(confirmDeletion).click();
+//        try {
+//            Thread.sleep(3000);
+//   m     } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
 

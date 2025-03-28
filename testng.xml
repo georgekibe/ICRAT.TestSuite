@@ -5,8 +5,8 @@
         <classes>
 
 <!--            <class name="tests.BaseTest"></class>-->
-            <class name="tests.generalsetups.CountriesTests"></class>
             <class name="tests.generalsetups.TenorsTests"></class>
+            <class name="tests.generalsetups.CountriesTests"></class>
             <class name="tests.generalsetups.IssuersTests"></class>
             <class name="tests.generalsetups.CurrenciesTests"></class>
             <class name="tests.generalsetups.SectorsTests"></class>

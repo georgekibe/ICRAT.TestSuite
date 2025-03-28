@@ -28,7 +28,8 @@ public class TenorsPage {
     // pending approval
     private final By pendingApproval = By.xpath("//span[normalize-space()='Pending Approval']");
     private final By pendingTenor = By.xpath("//td[normalize-space()='8.00-9.00 Years']");
-    private final By approveTenor = By.xpath("//span[normalize-space()='Approve']");
+//    private final By approveTenor = By.xpath("//span[normalize-space()='Approve']");
+private final By approveTenor = By.xpath("/html[1]/body[1]/div[4]/div[2]/div[1]/mat-dialog-container[1]/app-data-form[1]/div[1]/div[2]/div[3]/dx-button[1]/div[1]/span[1]");
     private final By updateButton = By.xpath("//span[normalize-space()='update']");
     private final By activeWindow = By.xpath("//span[normalize-space()='Active']");
     private final By searchTxtBox = By.xpath("/html/body/app-root/div/div/app-tenors/div/div/div[1]/div[1]/div/div[3]/app-data-grid/div/dx-data-grid/div/div[4]/div/div/div[3]/div[3]/div/div/div/div[1]/input");
@@ -61,6 +62,11 @@ public class TenorsPage {
         Actions actions = new Actions(webDriver);
         WebElement webElement = webDriver.findElement(pendingTenor);
         actions.doubleClick(webElement).perform();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         webDriver.findElement(approveTenor).click();
 
     }
